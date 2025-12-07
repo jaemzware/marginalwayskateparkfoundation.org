@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marginal Way Skatepark Foundation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #111;
+            color: #fff;
+            line-height: 1.6;
+        }
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            border-bottom: 1px solid #333;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            color: #888;
+            font-size: 1.1rem;
+        }
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        .about {
+            margin-bottom: 50px;
+        }
+        .about h2 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+        .about p {
+            color: #999;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        .status {
+            display: inline-block;
+            background: #222;
+            border: 1px solid #444;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #6c6;
+            margin-top: 10px;
+        }
+        .gallery {
+            margin-top: 50px;
+        }
+        .gallery h2 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: #ccc;
+        }
+        .photos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .photos img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 4px;
+            transition: transform 0.2s;
+        }
+        .photos img:hover {
+            transform: scale(1.02);
+        }
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 1px solid #333;
+            margin-top: 50px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #888;
+        }
+        .board {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+        .board h3 {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 10px;
+        }
+        .board p {
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Marginal Way Skatepark Foundation</h1>
+        <p class="tagline">Seattle's DIY skatepark since 2004. Maintained by skaters, for skaters.</p>
+    </header>
+    
+    <main>
+        <section class="about">
+            <h2>About the Foundation</h2>
+            <p>The Marginal Way Skatepark Foundation is a Washington nonprofit corporation formed to maintain, improve, and preserve the Marginal Way Skatepark—a community-built concrete skatepark under Highway 99 at E Marginal Way S and S Hanford Street in Seattle's SODO district.</p>
+            <p>For over 20 years, volunteer skateboarders have built and maintained this park using privately raised funds and donated labor. The Foundation exists to formalize that stewardship, ensure transparent management of resources, and continue the park's legacy of free public access to quality skateboarding facilities.</p>
+            <p>We organize community events, maintenance days, and inclusive programming to keep the park thriving for the next generation of Seattle skaters.</p>
+            <div class="status">501(c)(3) status pending</div>
+            
+            <div class="board">
+                <h3>Board of Directors</h3>
+                <p>Kate — President &nbsp;|&nbsp; Isaac — Secretary &nbsp;|&nbsp; Jim — Treasurer</p>
+            </div>
+        </section>
+        
+        <section class="gallery">
+            <h2>The Park</h2>
+            <div class="photos" id="gallery"></div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Marginal Way Skatepark Foundation is a Washington nonprofit corporation.</p>
+        <p style="margin-top: 10px;">1099 SW Hanford St, Seattle, WA 98134</p>
+    </footer>
+
+    <script>
+        // Add your image filenames here
+        const images = [
+                        'marginal.jpg',
+                        'marginal2.jpg',
+                        'marginal3.jpg',
+                        'marginalway4.jpg',
+                        'marginalway5.jpg',
+                        'IMG_7074.JPG',
+                        'IMG_7081.JPG',
+                        'IMG_7084.JPG',
+                        'IMG_7085.JPG',
+                        'IMG_7088.JPG',
+                        'IMG_7091.JPG',
+                        'IMG_7092.JPG',
+                        'IMG_7096.JPG'
+        ];
+        
+        const gallery = document.getElementById('gallery');
+        
+        if (images.length === 0) {
+            gallery.innerHTML = '<p style="color: #666;">Photos coming soon.</p>';
+        } else {
+            images.forEach(src => {
+                const link = document.createElement('a');
+                link.href = src;
+                link.target = '_blank';
+                
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = 'Marginal Way Skatepark';
+                img.loading = 'lazy';
+                
+                link.appendChild(img);
+                gallery.appendChild(link);
+            });
+        }
+    </script>
+</body>
+</html>
