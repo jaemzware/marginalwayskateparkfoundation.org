@@ -3,7 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marginal Way Skatepark Foundation</title>
+
+    <!-- Primary SEO -->
+    <title>Marginal Way Skatepark Foundation | Seattle DIY Skatepark Nonprofit</title>
+    <meta name="description" content="The official nonprofit foundation for Marginal Way Skatepark in Seattle's SODO district. Community-built since 2004. Donate to support Seattle's premier DIY concrete skatepark. Tax-deductible contributions welcome.">
+    <meta name="keywords" content="Marginal Way Skatepark, Seattle skatepark, DIY skatepark, SODO skatepark, Seattle skateboarding, Marginal Way Skatepark Foundation, donate to skatepark, Seattle nonprofit, Washington skatepark, E Marginal Way S, concrete skatepark, community skatepark">
+    <meta name="author" content="Marginal Way Skatepark Foundation">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://marginalwayskateparkfoundation.org/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marginalwayskateparkfoundation.org/">
+    <meta property="og:title" content="Marginal Way Skatepark Foundation | Seattle DIY Skatepark Nonprofit">
+    <meta property="og:description" content="The official nonprofit foundation for Marginal Way Skatepark in Seattle's SODO district. Community-built since 2004. Donate to support Seattle's premier DIY concrete skatepark.">
+    <meta property="og:image" content="https://marginalwayskateparkfoundation.org/marginal.jpg">
+    <meta property="og:site_name" content="Marginal Way Skatepark Foundation">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://marginalwayskateparkfoundation.org/">
+    <meta name="twitter:title" content="Marginal Way Skatepark Foundation | Seattle DIY Skatepark Nonprofit">
+    <meta name="twitter:description" content="The official nonprofit foundation for Marginal Way Skatepark in Seattle's SODO district. Community-built since 2004. Donate to support Seattle's premier DIY concrete skatepark.">
+    <meta name="twitter:image" content="https://marginalwayskateparkfoundation.org/marginal.jpg">
+
+    <!-- Geographic SEO -->
+    <meta name="geo.region" content="US-WA">
+    <meta name="geo.placename" content="Seattle">
+    <meta name="geo.position" content="47.5549;-122.3344">
+    <meta name="ICBM" content="47.5549, -122.3344">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "NonprofitOrganization",
+        "name": "Marginal Way Skatepark Foundation",
+        "alternateName": ["Marginal Way Skatepark", "MWSP Foundation"],
+        "url": "https://marginalwayskateparkfoundation.org",
+        "logo": "https://marginalwayskateparkfoundation.org/marginal.jpg",
+        "description": "Washington nonprofit corporation dedicated to maintaining, improving, and preserving Marginal Way Skatepark—Seattle's community-built DIY concrete skatepark since 2004.",
+        "foundingDate": "2024",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1099 SW Hanford St",
+            "addressLocality": "Seattle",
+            "addressRegion": "WA",
+            "postalCode": "98134",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 47.5549,
+            "longitude": -122.3344
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "Seattle",
+            "sameAs": "https://en.wikipedia.org/wiki/Seattle"
+        },
+        "nonprofitStatus": "Nonprofit501c3",
+        "keywords": "skatepark, skateboarding, DIY, Seattle, SODO, nonprofit, community",
+        "sameAs": []
+    }
+    </script>
+
+    <!-- Local Business Schema for better local SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SportsActivityLocation",
+        "name": "Marginal Way Skatepark",
+        "description": "Seattle's premier DIY concrete skatepark, community-built and maintained since 2004. Located under Highway 99 in the SODO district.",
+        "url": "https://marginalwayskateparkfoundation.org",
+        "image": "https://marginalwayskateparkfoundation.org/marginal.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "E Marginal Way S and S Hanford Street",
+            "addressLocality": "Seattle",
+            "addressRegion": "WA",
+            "postalCode": "98134",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 47.5549,
+            "longitude": -122.3344
+        },
+        "openingHours": "Mo-Su 00:00-23:59",
+        "isAccessibleForFree": true,
+        "publicAccess": true
+    }
+    </script>
+
     <style>
         * {
             margin: 0;
@@ -106,72 +199,165 @@
         .board p {
             font-size: 0.95rem;
         }
+        /* Donate Section */
+        .donate {
+            margin-top: 50px;
+            padding: 40px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+        }
+        .donate h2 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+        .donate p {
+            color: #999;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        .donate-btn {
+            display: inline-block;
+            background: #4f46e5;
+            color: #fff;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .donate-btn:hover {
+            background: #4338ca;
+        }
+        .donate-btn:disabled,
+        .donate-btn.coming-soon {
+            background: #333;
+            color: #666;
+            cursor: not-allowed;
+        }
+        .donate-note {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .transparency {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+        .transparency h3 {
+            font-size: 1rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+        .transparency ul {
+            list-style: none;
+            color: #777;
+            font-size: 0.95rem;
+        }
+        .transparency li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .transparency li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #6c6;
+        }
     </style>
 </head>
 <body>
-    <header>
+    <header role="banner">
         <h1>Marginal Way Skatepark Foundation</h1>
         <p class="tagline">Seattle's DIY skatepark since 2004. Maintained by skaters, for skaters.</p>
     </header>
-    
-    <main>
-        <section class="about">
-            <h2>About the Foundation</h2>
-            <p>The Marginal Way Skatepark Foundation is a Washington nonprofit corporation formed to maintain, improve, and preserve the Marginal Way Skatepark—a community-built concrete skatepark under Highway 99 at E Marginal Way S and S Hanford Street in Seattle's SODO district.</p>
-            <p>For over 20 years, volunteer skateboarders have built and maintained this park using privately raised funds and donated labor. The Foundation exists to formalize that stewardship, ensure transparent management of resources, and continue the park's legacy of free public access to quality skateboarding facilities.</p>
-            <p>We organize community events, maintenance days, and inclusive programming to keep the park thriving for the next generation of Seattle skaters.</p>
+
+    <main role="main">
+        <article class="about">
+            <h2>About the Marginal Way Skatepark Foundation</h2>
+            <p>The <strong>Marginal Way Skatepark Foundation</strong> is a Washington nonprofit corporation formed to maintain, improve, and preserve <strong>Marginal Way Skatepark</strong>—a community-built concrete skatepark under Highway 99 at E Marginal Way S and S Hanford Street in <strong>Seattle's SODO district</strong>.</p>
+            <p>For over 20 years, volunteer skateboarders have built and maintained this park using privately raised funds and donated labor. The Foundation exists to formalize that stewardship, ensure <strong>transparent management of all donations</strong>, and continue the park's legacy of free public access to quality skateboarding facilities.</p>
+            <p>As a registered nonprofit with a dedicated bank account, <strong>100% of donations go directly to park maintenance and improvements</strong>. We organize community events, maintenance days, and inclusive programming to keep the park thriving for the next generation of Seattle skaters.</p>
             <div class="status">501(c)(3) status pending</div>
-            
-            <div class="board">
+
+            <section class="board">
                 <h3>Board of Directors</h3>
                 <p>Kate — President &nbsp;|&nbsp; Isaac — Secretary &nbsp;|&nbsp; Jim — Treasurer</p>
+            </section>
+        </article>
+
+        <section class="donate" id="donate" aria-label="Donate to Marginal Way Skatepark">
+            <h2>Support the Park</h2>
+            <p>Your donation goes directly to <strong>concrete, tools, and maintenance</strong> for Marginal Way Skatepark. As a registered nonprofit, we maintain full transparency—every dollar is accounted for and dedicated to the park.</p>
+
+            <!-- TODO: Replace with Stripe integration -->
+            <button class="donate-btn coming-soon" disabled>Online Donations Coming Soon</button>
+            <p class="donate-note">We're setting up secure online donations. Check back soon or contact us directly to contribute.</p>
+
+            <div class="transparency">
+                <h3>Our Commitment</h3>
+                <ul>
+                    <li>Dedicated nonprofit bank account—no personal accounts</li>
+                    <li>All funds used exclusively for park improvements</li>
+                    <li>Regular financial reporting to the community</li>
+                    <li>501(c)(3) tax-deductible status pending</li>
+                </ul>
             </div>
         </section>
-        
-        <section class="gallery">
-            <h2>The Park</h2>
+
+        <section class="gallery" aria-label="Marginal Way Skatepark Photo Gallery">
+            <h2>Marginal Way Skatepark Photos</h2>
             <div class="photos" id="gallery"></div>
         </section>
     </main>
-    
-    <footer>
-        <p>Marginal Way Skatepark Foundation is a Washington nonprofit corporation.</p>
-        <p style="margin-top: 10px;">1099 SW Hanford St, Seattle, WA 98134</p>
+
+    <footer role="contentinfo">
+        <p><strong>Marginal Way Skatepark Foundation</strong> is a Washington nonprofit corporation.</p>
+        <p style="margin-top: 10px;"><a href="https://maps.google.com/?q=E+Marginal+Way+S+and+S+Hanford+Street+Seattle+WA" target="_blank" rel="noopener">E Marginal Way S &amp; S Hanford St, Seattle, WA 98134</a></p>
+        <p style="margin-top: 10px;">Contact: <a href="mailto:info@marginalwayskateparkfoundation.org">info@marginalwayskateparkfoundation.org</a></p>
     </footer>
 
     <script>
-        // Add your image filenames here
+        // Image data with SEO-optimized alt text
         const images = [
-                        'marginal.jpg',
-                        'marginal2.jpg',
-                        'marginal3.jpg',
-                        'marginalway4.jpg',
-                        'marginalway5.jpg',
-                        'IMG_7074.JPG',
-                        'IMG_7081.JPG',
-                        'IMG_7084.JPG',
-                        'IMG_7085.JPG',
-                        'IMG_7088.JPG',
-                        'IMG_7091.JPG',
-                        'IMG_7092.JPG',
-                        'IMG_7096.JPG'
+            { src: 'marginal.jpg', alt: 'Marginal Way Skatepark concrete bowl section in Seattle SODO district' },
+            { src: 'marginal2.jpg', alt: 'DIY concrete features at Marginal Way Skatepark Seattle' },
+            { src: 'marginal3.jpg', alt: 'Skateboarder riding at Marginal Way Skatepark under Highway 99' },
+            { src: 'marginalway4.jpg', alt: 'Community-built skateboarding obstacles at Marginal Way Seattle' },
+            { src: 'marginalway5.jpg', alt: 'Marginal Way Skatepark street section with ledges and rails' },
+            { src: 'IMG_7074.JPG', alt: 'Marginal Way Skatepark Seattle Washington overview' },
+            { src: 'IMG_7081.JPG', alt: 'Concrete transitions at Marginal Way DIY Skatepark' },
+            { src: 'IMG_7084.JPG', alt: 'Skateboarding at Marginal Way Skatepark SODO Seattle' },
+            { src: 'IMG_7085.JPG', alt: 'Marginal Way Skatepark quarter pipe and bowl features' },
+            { src: 'IMG_7088.JPG', alt: 'Seattle skatepark community at Marginal Way' },
+            { src: 'IMG_7091.JPG', alt: 'Volunteer-built concrete at Marginal Way Skatepark' },
+            { src: 'IMG_7092.JPG', alt: 'Marginal Way Skatepark E Marginal Way S location' },
+            { src: 'IMG_7096.JPG', alt: 'Marginal Way Skatepark Foundation supported skate spot Seattle' }
         ];
-        
+
         const gallery = document.getElementById('gallery');
-        
+
         if (images.length === 0) {
             gallery.innerHTML = '<p style="color: #666;">Photos coming soon.</p>';
         } else {
-            images.forEach(src => {
+            images.forEach(item => {
                 const link = document.createElement('a');
-                link.href = src;
+                link.href = item.src;
                 link.target = '_blank';
-                
+                link.rel = 'noopener';
+                link.title = item.alt;
+
                 const img = document.createElement('img');
-                img.src = src;
-                img.alt = 'Marginal Way Skatepark';
+                img.src = item.src;
+                img.alt = item.alt;
                 img.loading = 'lazy';
-                
+
                 link.appendChild(img);
                 gallery.appendChild(link);
             });

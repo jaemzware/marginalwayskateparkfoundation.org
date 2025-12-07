@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://marginalwayskateparkfoundation.org/</loc>
+    <lastmod>2024-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://marginalwayskateparkfoundation.org/marginal.jpg</image:loc>
+      <image:title>Marginal Way Skatepark Seattle</image:title>
+      <image:caption>Marginal Way Skatepark concrete bowl section in Seattle SODO district</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://marginalwayskateparkfoundation.org/marginal2.jpg</image:loc>
+      <image:title>DIY Skatepark Seattle</image:title>
+      <image:caption>DIY concrete features at Marginal Way Skatepark Seattle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://marginalwayskateparkfoundation.org/marginal3.jpg</image:loc>
+      <image:title>Skateboarding Seattle</image:title>
+      <image:caption>Skateboarder riding at Marginal Way Skatepark under Highway 99</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://marginalwayskateparkfoundation.org/marginalway4.jpg</image:loc>
+      <image:title>Community Skatepark Seattle</image:title>
+      <image:caption>Community-built skateboarding obstacles at Marginal Way Seattle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://marginalwayskateparkfoundation.org/marginalway5.jpg</image:loc>
+      <image:title>Marginal Way Street Section</image:title>
+      <image:caption>Marginal Way Skatepark street section with ledges and rails</image:caption>
+    </image:image>
+  </url>
+</urlset>
