@@ -235,6 +235,14 @@
             border-radius: 4px;
             font-size: 0.8rem;
         }
+        .news-post-video {
+            width: 100%;
+        }
+        .news-post-video video {
+            width: 100%;
+            max-height: 500px;
+            background: #000;
+        }
         footer {
             text-align: center;
             padding: 50px 20px;
@@ -388,6 +396,15 @@
         // Each post can have multiple images, a title, date, body text, and tags
         const posts = [
             {
+                date: 'December 5, 2025',
+                title: 'The Current State: Why We Need Your Help',
+                body: `<p>This video shows the reality we're fighting against—graffiti covering nearly every surface, debris, and fire damage leaving pools of black sludge.</p>
+                       <p>This is why the Foundation exists. We need your support to restore and maintain the park, keeping it clean and safe for the entire skateboarding community.</p>`,
+                video: 'photos/park-current-state.mp4',
+                images: [],
+                tags: ['cleanup', 'vandalism', 'help-needed']
+            },
+            {
                 date: 'December 2025',
                 title: 'Articles of Incorporation Filed',
                 body: `<p>We've filed our Articles of Incorporation with Washington State to establish the Marginal Way Skatepark Foundation as an official nonprofit corporation.</p>
@@ -402,10 +419,12 @@
             },
             {
                 date: 'December 2025',
-                title: 'The Park Today',
-                body: `<p>Current state of Marginal Way Skatepark—Seattle's DIY concrete skatepark under Highway 99 in the SODO district. Built and maintained by the community since 2004.</p>`,
+                title: 'The Park When We Keep It Clean',
+                body: `<p>This is what Marginal Way Skatepark looks like when we maintain it—and keeping it this way is the primary mission of the Foundation.</p>
+                       <p>We're committed to keeping the park free of unwanted graffiti, debris, fire damage, and hazards. A zero-tolerance policy on hard drugs helps ensure the space remains safe and welcoming for skaters of all ages.</p>
+                       <p>Your donations fund regular cleanups, maintenance supplies, and improvements so the whole community can enjoy this space.</p>`,
                 images: [
-                    { src: 'photos/IMG_7074.JPG', alt: 'Marginal Way Skatepark Seattle Washington overview' },
+                    { src: 'photos/IMG_7074.JPG', alt: 'Marginal Way Skatepark Seattle Washington clean and maintained' },
                     { src: 'photos/IMG_7081.JPG', alt: 'Concrete transitions at Marginal Way DIY Skatepark' },
                     { src: 'photos/IMG_7084.JPG', alt: 'Skateboarding at Marginal Way Skatepark SODO Seattle' },
                     { src: 'photos/IMG_7085.JPG', alt: 'Marginal Way Skatepark quarter pipe and bowl features' },
@@ -414,7 +433,7 @@
                     { src: 'photos/IMG_7092.JPG', alt: 'Marginal Way Skatepark E Marginal Way S location' },
                     { src: 'photos/IMG_7096.JPG', alt: 'Marginal Way Skatepark Foundation supported skate spot Seattle' }
                 ],
-                tags: ['park', 'photos']
+                tags: ['maintenance', 'cleanup', 'community']
             },
             {
                 date: '2004 - Present',
@@ -436,25 +455,40 @@
             const article = document.createElement('article');
             article.className = 'news-post';
 
+            // Video (if present)
+            if (post.video) {
+                const videoDiv = document.createElement('div');
+                videoDiv.className = 'news-post-video';
+                const videoEl = document.createElement('video');
+                videoEl.src = post.video;
+                videoEl.controls = true;
+                videoEl.playsInline = true;
+                videoEl.preload = 'metadata';
+                videoDiv.appendChild(videoEl);
+                article.appendChild(videoDiv);
+            }
+
             // Images
-            const imagesDiv = document.createElement('div');
-            imagesDiv.className = 'news-post-images' + (post.images.length === 1 ? ' single-image' : '');
-            post.images.forEach(img => {
-                const link = document.createElement('a');
-                link.href = img.src;
-                link.target = '_blank';
-                link.rel = 'noopener';
-                link.title = img.alt;
+            if (post.images && post.images.length > 0) {
+                const imagesDiv = document.createElement('div');
+                imagesDiv.className = 'news-post-images' + (post.images.length === 1 ? ' single-image' : '');
+                post.images.forEach(img => {
+                    const link = document.createElement('a');
+                    link.href = img.src;
+                    link.target = '_blank';
+                    link.rel = 'noopener';
+                    link.title = img.alt;
 
-                const imgEl = document.createElement('img');
-                imgEl.src = img.src;
-                imgEl.alt = img.alt;
-                imgEl.loading = 'lazy';
+                    const imgEl = document.createElement('img');
+                    imgEl.src = img.src;
+                    imgEl.alt = img.alt;
+                    imgEl.loading = 'lazy';
 
-                link.appendChild(imgEl);
-                imagesDiv.appendChild(link);
-            });
-            article.appendChild(imagesDiv);
+                    link.appendChild(imgEl);
+                    imagesDiv.appendChild(link);
+                });
+                article.appendChild(imagesDiv);
+            }
 
             // Content
             const contentDiv = document.createElement('div');
