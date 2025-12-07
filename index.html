@@ -17,7 +17,7 @@
     <meta property="og:url" content="https://marginalwayskateparkfoundation.org/">
     <meta property="og:title" content="Marginal Way Skatepark Foundation | Seattle DIY Skatepark Nonprofit">
     <meta property="og:description" content="The official nonprofit foundation for Marginal Way Skatepark in Seattle's SODO district. Community-built since 2004. Donate to support Seattle's premier DIY concrete skatepark.">
-    <meta property="og:image" content="https://marginalwayskateparkfoundation.org/marginal.jpg">
+    <meta property="og:image" content="https://marginalwayskateparkfoundation.org/photos/marginal.jpg">
     <meta property="og:site_name" content="Marginal Way Skatepark Foundation">
     <meta property="og:locale" content="en_US">
 
@@ -26,7 +26,7 @@
     <meta name="twitter:url" content="https://marginalwayskateparkfoundation.org/">
     <meta name="twitter:title" content="Marginal Way Skatepark Foundation | Seattle DIY Skatepark Nonprofit">
     <meta name="twitter:description" content="The official nonprofit foundation for Marginal Way Skatepark in Seattle's SODO district. Community-built since 2004. Donate to support Seattle's premier DIY concrete skatepark.">
-    <meta name="twitter:image" content="https://marginalwayskateparkfoundation.org/marginal.jpg">
+    <meta name="twitter:image" content="https://marginalwayskateparkfoundation.org/photos/marginal.jpg">
 
     <!-- Geographic SEO -->
     <meta name="geo.region" content="US-WA">
@@ -42,7 +42,7 @@
         "name": "Marginal Way Skatepark Foundation",
         "alternateName": ["Marginal Way Skatepark", "MWSP Foundation"],
         "url": "https://marginalwayskateparkfoundation.org",
-        "logo": "https://marginalwayskateparkfoundation.org/marginal.jpg",
+        "logo": "https://marginalwayskateparkfoundation.org/photos/marginal.jpg",
         "description": "Washington nonprofit corporation dedicated to maintaining, improving, and preserving Marginal Way Skatepark—Seattle's community-built DIY concrete skatepark since 2004.",
         "foundingDate": "2024",
         "address": {
@@ -77,7 +77,7 @@
         "name": "Marginal Way Skatepark",
         "description": "Seattle's premier DIY concrete skatepark, community-built and maintained since 2004. Located under Highway 99 in the SODO district.",
         "url": "https://marginalwayskateparkfoundation.org",
-        "image": "https://marginalwayskateparkfoundation.org/marginal.jpg",
+        "image": "https://marginalwayskateparkfoundation.org/photos/marginal.jpg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "E Marginal Way S and S Hanford Street",
@@ -152,28 +152,84 @@
             color: #6c6;
             margin-top: 10px;
         }
-        .gallery {
+        /* News/Updates Section */
+        .news {
             margin-top: 50px;
         }
-        .gallery h2 {
+        .news h2 {
             font-size: 1.4rem;
             margin-bottom: 25px;
             color: #ccc;
         }
-        .photos {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 15px;
+        .news-feed {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
-        .photos img {
+        .news-post {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .news-post-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2px;
+        }
+        .news-post-images.single-image {
+            grid-template-columns: 1fr;
+        }
+        .news-post-images img {
             width: 100%;
             height: 250px;
             object-fit: cover;
-            border-radius: 4px;
-            transition: transform 0.2s;
+            cursor: pointer;
+            transition: opacity 0.2s;
         }
-        .photos img:hover {
-            transform: scale(1.02);
+        .news-post-images.single-image img {
+            height: 350px;
+        }
+        .news-post-images img:hover {
+            opacity: 0.9;
+        }
+        .news-post-content {
+            padding: 20px;
+        }
+        .news-post-date {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        .news-post-title {
+            font-size: 1.15rem;
+            color: #ddd;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .news-post-body {
+            color: #999;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .news-post-body p {
+            margin-bottom: 10px;
+        }
+        .news-post-body p:last-child {
+            margin-bottom: 0;
+        }
+        .news-post-tags {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .news-tag {
+            background: #222;
+            color: #888;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
         }
         footer {
             text-align: center;
@@ -294,7 +350,7 @@
 
         <section class="donate" id="donate" aria-label="Donate to Marginal Way Skatepark">
             <h2>Support the Park</h2>
-            <p>Your donation goes directly to <strong>concrete, tools, and maintenance</strong> for Marginal Way Skatepark. As a registered nonprofit, we maintain full transparency—every dollar is accounted for and dedicated to the park.</p>
+            <p>Your donation goes directly to <strong>concrete, paint, tools, and maintenance</strong> for Marginal Way Skatepark. As a registered nonprofit, we maintain full transparency—every dollar is accounted for and dedicated to the park.</p>
 
             <!-- TODO: Replace with Stripe integration -->
             <button class="donate-btn coming-soon" disabled>Online Donations Coming Soon</button>
@@ -311,9 +367,9 @@
             </div>
         </section>
 
-        <section class="gallery" aria-label="Marginal Way Skatepark Photo Gallery">
-            <h2>Marginal Way Skatepark Photos</h2>
-            <div class="photos" id="gallery"></div>
+        <section class="news" id="news" aria-label="Marginal Way Skatepark News and Updates">
+            <h2>News &amp; Updates</h2>
+            <div class="news-feed" id="news-feed"></div>
         </section>
     </main>
 
@@ -324,44 +380,113 @@
     </footer>
 
     <script>
-        // Image data with SEO-optimized alt text
-        const images = [
-            { src: 'marginal.jpg', alt: 'Marginal Way Skatepark concrete bowl section in Seattle SODO district' },
-            { src: 'marginal2.jpg', alt: 'DIY concrete features at Marginal Way Skatepark Seattle' },
-            { src: 'marginal3.jpg', alt: 'Skateboarder riding at Marginal Way Skatepark under Highway 99' },
-            { src: 'marginalway4.jpg', alt: 'Community-built skateboarding obstacles at Marginal Way Seattle' },
-            { src: 'marginalway5.jpg', alt: 'Marginal Way Skatepark street section with ledges and rails' },
-            { src: 'IMG_7074.JPG', alt: 'Marginal Way Skatepark Seattle Washington overview' },
-            { src: 'IMG_7081.JPG', alt: 'Concrete transitions at Marginal Way DIY Skatepark' },
-            { src: 'IMG_7084.JPG', alt: 'Skateboarding at Marginal Way Skatepark SODO Seattle' },
-            { src: 'IMG_7085.JPG', alt: 'Marginal Way Skatepark quarter pipe and bowl features' },
-            { src: 'IMG_7088.JPG', alt: 'Seattle skatepark community at Marginal Way' },
-            { src: 'IMG_7091.JPG', alt: 'Volunteer-built concrete at Marginal Way Skatepark' },
-            { src: 'IMG_7092.JPG', alt: 'Marginal Way Skatepark E Marginal Way S location' },
-            { src: 'IMG_7096.JPG', alt: 'Marginal Way Skatepark Foundation supported skate spot Seattle' }
+        // NEWS POSTS - Add new posts at the TOP of this array (newest first)
+        // Each post can have multiple images, a title, date, body text, and tags
+        const posts = [
+            {
+                date: 'December 7, 2024',
+                title: 'Marginal Way Skatepark Foundation Officially Incorporated',
+                body: `<p>We're excited to announce that the Marginal Way Skatepark Foundation has been officially incorporated as a Washington nonprofit corporation.</p>
+                       <p>After 20 years of informal community stewardship, we're formalizing our commitment to this park with transparent governance, a dedicated bank account, and proper nonprofit structure. Every dollar donated will go directly to concrete, paint, tools, and maintenance.</p>
+                       <p>Stay tuned for updates on our 501(c)(3) status and upcoming community events.</p>`,
+                images: [
+                    { src: 'photos/marginal.jpg', alt: 'Marginal Way Skatepark concrete bowl section in Seattle SODO district' },
+                    { src: 'photos/marginal2.jpg', alt: 'DIY concrete features at Marginal Way Skatepark Seattle' },
+                    { src: 'photos/marginal3.jpg', alt: 'Skateboarder riding at Marginal Way Skatepark under Highway 99' }
+                ],
+                tags: ['announcement', 'nonprofit', 'foundation']
+            },
+            {
+                date: 'December 2024',
+                title: 'The Park Today',
+                body: `<p>Current state of Marginal Way Skatepark—Seattle's DIY concrete skatepark under Highway 99 in the SODO district. Built and maintained by the community since 2004.</p>`,
+                images: [
+                    { src: 'photos/IMG_7074.JPG', alt: 'Marginal Way Skatepark Seattle Washington overview' },
+                    { src: 'photos/IMG_7081.JPG', alt: 'Concrete transitions at Marginal Way DIY Skatepark' },
+                    { src: 'photos/IMG_7084.JPG', alt: 'Skateboarding at Marginal Way Skatepark SODO Seattle' },
+                    { src: 'photos/IMG_7085.JPG', alt: 'Marginal Way Skatepark quarter pipe and bowl features' },
+                    { src: 'photos/IMG_7088.JPG', alt: 'Seattle skatepark community at Marginal Way' },
+                    { src: 'photos/IMG_7091.JPG', alt: 'Volunteer-built concrete at Marginal Way Skatepark' },
+                    { src: 'photos/IMG_7092.JPG', alt: 'Marginal Way Skatepark E Marginal Way S location' },
+                    { src: 'photos/IMG_7096.JPG', alt: 'Marginal Way Skatepark Foundation supported skate spot Seattle' }
+                ],
+                tags: ['park', 'photos']
+            },
+            {
+                date: '2004 - Present',
+                title: 'History: 20 Years of Community-Built Skateboarding',
+                body: `<p>Marginal Way Skatepark was built by volunteer skateboarders starting in 2004. Using privately raised funds and donated labor, the Seattle skateboarding community transformed unused space under Highway 99 into one of the Pacific Northwest's most unique DIY skateparks.</p>
+                       <p>For two decades, generations of skaters have contributed to building, maintaining, and improving this space—keeping it free and accessible to all.</p>`,
+                images: [
+                    { src: 'photos/marginalway4.jpg', alt: 'Community-built skateboarding obstacles at Marginal Way Seattle' },
+                    { src: 'photos/marginalway5.jpg', alt: 'Marginal Way Skatepark street section with ledges and rails' }
+                ],
+                tags: ['history', 'community', 'DIY']
+            }
         ];
 
-        const gallery = document.getElementById('gallery');
+        // Render news posts
+        const newsFeed = document.getElementById('news-feed');
 
-        if (images.length === 0) {
-            gallery.innerHTML = '<p style="color: #666;">Photos coming soon.</p>';
-        } else {
-            images.forEach(item => {
+        posts.forEach(post => {
+            const article = document.createElement('article');
+            article.className = 'news-post';
+
+            // Images
+            const imagesDiv = document.createElement('div');
+            imagesDiv.className = 'news-post-images' + (post.images.length === 1 ? ' single-image' : '');
+            post.images.forEach(img => {
                 const link = document.createElement('a');
-                link.href = item.src;
+                link.href = img.src;
                 link.target = '_blank';
                 link.rel = 'noopener';
-                link.title = item.alt;
+                link.title = img.alt;
 
-                const img = document.createElement('img');
-                img.src = item.src;
-                img.alt = item.alt;
-                img.loading = 'lazy';
+                const imgEl = document.createElement('img');
+                imgEl.src = img.src;
+                imgEl.alt = img.alt;
+                imgEl.loading = 'lazy';
 
-                link.appendChild(img);
-                gallery.appendChild(link);
+                link.appendChild(imgEl);
+                imagesDiv.appendChild(link);
             });
-        }
+            article.appendChild(imagesDiv);
+
+            // Content
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'news-post-content';
+
+            const dateEl = document.createElement('time');
+            dateEl.className = 'news-post-date';
+            dateEl.textContent = post.date;
+            contentDiv.appendChild(dateEl);
+
+            const titleEl = document.createElement('h3');
+            titleEl.className = 'news-post-title';
+            titleEl.textContent = post.title;
+            contentDiv.appendChild(titleEl);
+
+            const bodyEl = document.createElement('div');
+            bodyEl.className = 'news-post-body';
+            bodyEl.innerHTML = post.body;
+            contentDiv.appendChild(bodyEl);
+
+            // Tags
+            if (post.tags && post.tags.length > 0) {
+                const tagsDiv = document.createElement('div');
+                tagsDiv.className = 'news-post-tags';
+                post.tags.forEach(tag => {
+                    const tagEl = document.createElement('span');
+                    tagEl.className = 'news-tag';
+                    tagEl.textContent = '#' + tag;
+                    tagsDiv.appendChild(tagEl);
+                });
+                contentDiv.appendChild(tagsDiv);
+            }
+
+            article.appendChild(contentDiv);
+            newsFeed.appendChild(article);
+        });
     </script>
 </body>
 </html>
