@@ -1,0 +1,25 @@
+# IDE
+.idea/
+*.swp
+*.swo
+.vscode/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Deploy
+deploy.sh
+
+# Logs
+*.log
+
+# Backup files
+*.bak
+*~
