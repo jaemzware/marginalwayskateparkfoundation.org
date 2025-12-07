@@ -222,6 +222,21 @@
         .news-post-body p:last-child {
             margin-bottom: 0;
         }
+        .news-post-body a.featured-link,
+        .news-post-body a.featured-link:visited {
+            display: inline-block;
+            background: #333;
+            color: #fff;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .news-post-body a.featured-link:hover {
+            background: #555;
+            transform: scale(1.05);
+        }
         .news-post-tags {
             margin-top: 15px;
             display: flex;
@@ -422,7 +437,7 @@
                 title: 'The Park When We Keep It Clean',
                 body: `<p>This is what Marginal Way Skatepark looks like when we maintain it—and keeping it this way is the primary mission of the Foundation.</p>
                        <p>We're committed to keeping the park free of unwanted graffiti, debris, fire damage, and hazards. <strong>Akin to Christiania in Copenhagen, Denmark: no hard drugs.</strong> Freetown Christiania—home to the legendary ALIS Wonderland DIY bowl built in 1998—has four unbreakable rules, and "no hard drugs" is first among them. That community has thrived for over 50 years with this standard, and we follow suit.</p>
-                       <p>Seattle and Denmark share deep ties in skateboarding culture. Seattle's own <a href="https://www.grindline.com/" target="_blank" rel="noopener">Grindline Skateparks</a> built Faelledparken in Copenhagen—both cities are meccas for skateparks. We honor that connection by holding ourselves to the same community standards that have made places like Christiania legendary.</p>
+                       <p>Seattle and Denmark share deep ties in skateboarding culture. Seattle's own <a href="https://www.grindline.com/" target="_blank" rel="noopener" class="featured-link">Grindline Skateparks</a> built Faelledparken in Copenhagen—both cities are meccas for skateparks. We honor that connection by holding ourselves to the same community standards that have made places like Christiania legendary.</p>
                        <p>Your donations fund regular cleanups, maintenance supplies, and improvements so the whole community can enjoy this space.</p>`,
                 images: [
                     { src: 'photos/IMG_7074.JPG', alt: 'Marginal Way Skatepark Seattle Washington clean and maintained' },
