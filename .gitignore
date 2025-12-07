@@ -27,3 +27,7 @@ deploy.sh
 # Large video files (use mp4 instead)
 *.MOV
 *.mov
+
+# Environment files (contain secrets)
+.env
+.env.local
