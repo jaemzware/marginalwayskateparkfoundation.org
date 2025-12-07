@@ -23,3 +23,7 @@ deploy.sh
 # Backup files
 *.bak
 *~
+
+# Large video files (use mp4 instead)
+*.MOV
+*.mov
