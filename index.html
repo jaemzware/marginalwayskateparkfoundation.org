@@ -353,6 +353,198 @@
             left: 0;
             color: #6c6;
         }
+        /* Featured Carousel */
+        .featured-work {
+            margin-top: 50px;
+            padding: 40px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+            border: 2px solid #4f46e5;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        .featured-work::before {
+            content: "NEW";
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: #4f46e5;
+            color: #fff;
+            padding: 5px 40px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transform: rotate(45deg);
+            letter-spacing: 1px;
+        }
+        .featured-work h2 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .featured-work .subtitle {
+            color: #888;
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+        .featured-work .coming-soon-note {
+            color: #6c6;
+            font-size: 0.95rem;
+            margin-top: 20px;
+            padding: 12px 16px;
+            background: rgba(102, 204, 102, 0.1);
+            border-left: 3px solid #6c6;
+            border-radius: 4px;
+        }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .carousel-main {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #000;
+        }
+        .carousel-main img,
+        .carousel-main video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: none;
+        }
+        .carousel-main img.active,
+        .carousel-main video.active {
+            display: block;
+        }
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 40px 20px 15px;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: background 0.2s;
+            backdrop-filter: blur(5px);
+        }
+        .carousel-nav:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        .carousel-nav.prev {
+            left: 15px;
+        }
+        .carousel-nav.next {
+            right: 15px;
+        }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #444;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .carousel-dot:hover {
+            background: #666;
+        }
+        .carousel-dot.active {
+            background: #4f46e5;
+            transform: scale(1.2);
+        }
+        .carousel-dot.video-dot {
+            background: #6c6;
+        }
+        .carousel-dot.video-dot.active {
+            background: #4f46e5;
+        }
+        .carousel-thumbnails {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 15px 0;
+            scrollbar-width: thin;
+            scrollbar-color: #444 #1a1a1a;
+        }
+        .carousel-thumbnails::-webkit-scrollbar {
+            height: 6px;
+        }
+        .carousel-thumbnails::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        .carousel-thumbnails::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 3px;
+        }
+        .carousel-thumb {
+            flex-shrink: 0;
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.2s, transform 0.2s;
+            border: 2px solid transparent;
+        }
+        .carousel-thumb:hover {
+            opacity: 0.9;
+        }
+        .carousel-thumb.active {
+            opacity: 1;
+            border-color: #4f46e5;
+            transform: scale(1.05);
+        }
+        .carousel-thumb.video-thumb {
+            position: relative;
+        }
+        .carousel-thumb.video-thumb::after {
+            content: "▶";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 1.2rem;
+            text-shadow: 0 0 10px rgba(0,0,0,0.8);
+        }
+        @media (max-width: 600px) {
+            .carousel-main {
+                height: 300px;
+            }
+            .carousel-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            .featured-work {
+                padding: 25px 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -392,6 +584,38 @@
                     <li>501(c)(3) tax-deductible status pending</li>
                 </ul>
             </div>
+        </section>
+
+        <section class="featured-work" id="recent-work" aria-label="Recent Foundation Work">
+            <h2>December 13th Paint Party</h2>
+            <p class="subtitle">This is just some of the work we do. The Foundation organized a paint day to cover fire damage and graffiti.</p>
+
+            <div class="carousel-container">
+                <div class="carousel-main" id="carousel-main">
+                    <video data-caption="Video evidence of the paint party in action" controls playsinline preload="metadata">
+                        <source src="photos/december%2013th%202025%20paint%20party/EVIDENCE.mp4" type="video/mp4">
+                    </video>
+                    <img src="photos/december%2013th%202025%20paint%20party/before%20IMG_6858%20Medium.jpeg" alt="Before: the state of the park" data-caption="Before: the state of the park before paint">
+                    <img src="photos/december%2013th%202025%20paint%20party/fire%20damage%20lifted%20IMG_6855%20Medium.jpeg" alt="Fire damage being addressed" data-caption="Fire damage lifted and ready for paint">
+                    <img src="photos/december%2013th%202025%20paint%20party/gettin%20to%20work%20IMG_6856%20Medium.jpeg" alt="Getting to work" data-caption="Getting to work on the cleanup">
+                    <img src="photos/december%2013th%202025%20paint%20party/starting%20the%20paint%20IMG_6857%20Medium.jpeg" alt="Starting the paint job" data-caption="Starting the paint job">
+                    <img src="photos/december%2013th%202025%20paint%20party/fire%20damage%20IMG_6862%20Medium.jpeg" alt="Fire damage being covered" data-caption="Covering up fire damage">
+                    <img src="photos/december%2013th%202025%20paint%20party/fire%20sludge%20smearedIMG_6864%20Medium.jpeg" alt="Fire sludge being cleaned" data-caption="Fire sludge smeared and being addressed">
+                    <img src="photos/december%2013th%202025%20paint%20party/painting%20IMG_6867%20Medium.jpeg" alt="Painting in progress" data-caption="Painting in progress">
+                    <img src="photos/december%2013th%202025%20paint%20party/painting%20more%20IMG_6868%20Medium.jpeg" alt="More painting" data-caption="Continuing the paint work">
+                    <img src="photos/december%2013th%202025%20paint%20party/gettin%20to%20work%204IMG_6869%20Medium.jpeg" alt="Crew at work" data-caption="The crew getting after it">
+                    <img src="photos/december%2013th%202025%20paint%20party/fire%20damage%20444IMG_6870%20Medium.jpeg" alt="Fire damage coverage" data-caption="More fire damage being covered">
+                    <img src="photos/december%2013th%202025%20paint%20party/fire%20damage%20IMG_6871%20Medium.jpeg" alt="Fire damage repair" data-caption="Fire damage repair in progress">
+                    <img src="photos/december%2013th%202025%20paint%20party/snacks%20IMG_6873%20Medium.jpeg" alt="Snack break" data-caption="Snack break for the crew">
+                    <div class="carousel-caption" id="carousel-caption"></div>
+                </div>
+                <button class="carousel-nav prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="carousel-nav next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+
+            <div class="carousel-dots" id="carousel-dots"></div>
+
+            <p class="coming-soon-note">Cooler stuff for Marg coming soon. Stay tuned for more Foundation projects!</p>
         </section>
 
         <section class="news" id="news" aria-label="Marginal Way Skatepark News and Updates">
@@ -541,6 +765,102 @@
             article.appendChild(contentDiv);
             newsFeed.appendChild(article);
         });
+
+        // CAROUSEL FUNCTIONALITY
+        const carouselMain = document.getElementById('carousel-main');
+        const carouselCaption = document.getElementById('carousel-caption');
+        const carouselDots = document.getElementById('carousel-dots');
+        const slides = carouselMain.querySelectorAll('img, video');
+        let currentSlide = 0;
+        let autoPlayInterval;
+
+        // Initialize carousel
+        function initCarousel() {
+            // Create dots
+            slides.forEach((slide, index) => {
+                const dot = document.createElement('button');
+                dot.className = 'carousel-dot' + (slide.tagName === 'VIDEO' ? ' video-dot' : '');
+                dot.onclick = () => goToSlide(index);
+                dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+                carouselDots.appendChild(dot);
+            });
+
+            // Show first slide
+            goToSlide(0);
+
+            // Start autoplay (pause on video)
+            startAutoPlay();
+        }
+
+        function goToSlide(index) {
+            // Hide all slides
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (slide.tagName === 'VIDEO') {
+                    slide.pause();
+                }
+            });
+
+            // Update dots
+            const dots = carouselDots.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+
+            // Show current slide
+            currentSlide = index;
+            slides[currentSlide].classList.add('active');
+
+            // Update caption
+            const caption = slides[currentSlide].dataset.caption || slides[currentSlide].alt || '';
+            carouselCaption.textContent = caption;
+
+            // Pause autoplay for videos
+            if (slides[currentSlide].tagName === 'VIDEO') {
+                stopAutoPlay();
+            } else {
+                startAutoPlay();
+            }
+        }
+
+        function changeSlide(direction) {
+            let newIndex = currentSlide + direction;
+            if (newIndex < 0) newIndex = slides.length - 1;
+            if (newIndex >= slides.length) newIndex = 0;
+            goToSlide(newIndex);
+        }
+
+        function startAutoPlay() {
+            stopAutoPlay();
+            autoPlayInterval = setInterval(() => {
+                if (slides[currentSlide].tagName !== 'VIDEO') {
+                    changeSlide(1);
+                }
+            }, 5000);
+        }
+
+        function stopAutoPlay() {
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+            }
+        }
+
+        // Pause autoplay on hover
+        carouselMain.addEventListener('mouseenter', stopAutoPlay);
+        carouselMain.addEventListener('mouseleave', () => {
+            if (slides[currentSlide].tagName !== 'VIDEO') {
+                startAutoPlay();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+
+        // Initialize
+        initCarousel();
     </script>
 </body>
 </html>
