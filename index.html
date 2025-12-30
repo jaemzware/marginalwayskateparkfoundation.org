@@ -282,6 +282,73 @@
         .board p {
             font-size: 0.95rem;
         }
+        /* 501(c)(3) Status Section */
+        .tax-status {
+            margin-top: 50px;
+            padding: 40px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+        }
+        .tax-status h2 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+        .tax-status p {
+            color: #999;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        .tax-status-image {
+            margin: 25px 0;
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .tax-status-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .tax-status-details {
+            background: #222;
+            border: 1px solid #444;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .tax-status-details h3 {
+            font-size: 1.1rem;
+            color: #6c6;
+            margin-bottom: 15px;
+        }
+        .tax-status-details dl {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 10px 20px;
+            color: #999;
+            font-size: 0.95rem;
+        }
+        .tax-status-details dt {
+            font-weight: 600;
+            color: #aaa;
+        }
+        .tax-status-details dd {
+            margin: 0;
+        }
+        .tax-disclaimer {
+            background: rgba(102, 204, 102, 0.1);
+            border-left: 3px solid #6c6;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: #aaa;
+        }
+        .tax-disclaimer strong {
+            color: #6c6;
+        }
         /* Donate Section */
         .donate {
             margin-top: 50px;
@@ -566,6 +633,35 @@
                 <p>Kate — President &nbsp;|&nbsp; Isaac — Secretary &nbsp;|&nbsp; Jim — Treasurer</p>
             </section>
         </article>
+
+        <section class="tax-status" id="tax-status" aria-label="501(c)(3) Tax-Exempt Status">
+            <h2>501(c)(3) Tax-Exempt Status</h2>
+            <p>We've officially submitted our application for federal tax-exempt status under Section 501(c)(3). Here's where we stand:</p>
+
+            <div class="tax-status-details">
+                <h3>Application Status: Accepted</h3>
+                <dl>
+                    <dt>Form Number:</dt>
+                    <dd>1023-EZ Payment Form</dd>
+                    <dt>Date Submitted:</dt>
+                    <dd>December 16, 2025</dd>
+                    <dt>Pay.gov Tracking ID:</dt>
+                    <dd>27TUD09R</dd>
+                    <dt>Current Status:</dt>
+                    <dd>Awaiting IRS approval</dd>
+                </dl>
+            </div>
+
+            <div class="tax-status-image">
+                <img src="photos/501c3-submission.png" alt="IRS Form 1023-EZ submission confirmation showing accepted status" loading="lazy">
+            </div>
+
+            <p>We're currently in the waiting period for IRS approval. Once approved, all donations will be officially tax-deductible retroactive to our incorporation date.</p>
+
+            <div class="tax-disclaimer">
+                <strong>For donors:</strong> In the unlikely event that our 501(c)(3) application is not approved, donations made during this waiting period may be subject to taxation. However, any tax liability would be handled entirely on our end—you would not be affected. We're confident in our application and committed to full transparency throughout this process.
+            </div>
+        </section>
 
         <section class="donate" id="donate" aria-label="Donate to Marginal Way Skatepark">
             <h2>Support the Park</h2>
